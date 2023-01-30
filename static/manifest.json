@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Klaatoo Wallet",
+  "version": "1.0.1",
+  "action": {
+    "default_icon": {
+      "16": "favicon.png",
+      "24": "favicon.png",
+      "32": "favicon.png"
+    },
+    "default_title": "Click Me",
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "service-workers/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "scripts/content-script.js"
+      ]
+    }
+  ]
+}
